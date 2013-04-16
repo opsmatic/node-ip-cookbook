@@ -28,10 +28,15 @@ Every interface in the `interfaces` hash will be configured using the values in 
 
 If the above data bag does not exist or does not have an `interfaces` key, nothing will be done 
 
+## Testing
+
+I can't get the Vagrant/Berkshelf integration to work correctly with databags, so the Vagrant test does not currently pass. Questionable if it would anyway,
+since it would probably break Virtualbox or Vagrant networking.
+
 # Recipes
 
 There's only the `default` recipe for now, which will do what is described under Usage
 
 # Author
 
-Author:: YOUR_NAME (<YOUR_EMAIL>)
+Author:: Mikhail Panchenko <m@mihasya.com> 
