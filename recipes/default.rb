@@ -12,6 +12,7 @@ rescue
 end
 
 service "networking" do
+	provider Chef::Provider::Service::Init
 	action :nothing
 end
 
