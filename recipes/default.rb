@@ -17,11 +17,14 @@ service "networking" do
 	action :nothing
 end
 
-template "/etc/network/interfaces" do
-	source "interfaces.erb"
-	notifies :restart, "service[networking]"
-	variables({
-		:data => data
-	})
+if data.has_key?('interfaces')
+	template "/etc/network/interfaces" do
+		source "interfaces.erb"
+		notifies :restart, "service[networking]"
+		variables({
+			:data => data
+		})
+	end
+else
+	Chef::Log.warn("No 'nodes' databag detected for #{node['hostname']} or it does not have an 'interfaces' key, will skip static IP configuration")
 end
-
