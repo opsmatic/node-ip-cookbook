@@ -3,8 +3,6 @@
 # Recipe:: default
 #
 # Copyright (C) 2013 Opsmatic
-# 
-# All rights reserved - Do Not Redistribute
 #
 
 begin
