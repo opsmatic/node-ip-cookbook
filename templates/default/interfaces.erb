@@ -1,0 +1,19 @@
+# interfaces(5) file used by ifup(8) and ifdown(8)
+auto lo
+iface lo inet loopback
+
+<% if @data.has_key?('interfaces') -%>
+	<% @data['interfaces'].each do |iface, cfg| -%>
+auto <%= iface %>
+		<% if cfg['dhcp'] -%>
+iface <%= iface -%> inet dhcp
+		<% else -%>
+iface <%= iface -%> inet static
+		<% cfg.each do |k, v| -%>
+<%= k -%> <%= v %>
+		<% end -%>
+		<% end -%>
+	<% end -%>
+<% else -%>
+iface eth0 inet dhcp
+<% end -%>

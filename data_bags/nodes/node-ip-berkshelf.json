@@ -1,0 +1,9 @@
+{
+	"id": "node-ip-berkshelf",
+	"interfaces": {
+		"eth0": {
+			"address": "10.0.2.15"
+			"netmask": "255.255.255.0"
+		}
+	}
+}
