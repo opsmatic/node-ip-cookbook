@@ -17,3 +17,7 @@ iface <%= iface -%> inet static
 <% else -%>
 iface eth0 inet dhcp
 <% end -%>
+
+# add static route for VPN subnet
+up route add -net 172.24.1.0/24 gw 10.0.1.99
+
