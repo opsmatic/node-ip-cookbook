@@ -18,9 +18,9 @@ iface <%= iface -%> inet static
 iface eth0 inet dhcp
 <% end -%>
 
-<% if @data.has_key?('routes') -%>
-	<% @data['routes'].each do |comment, route| %>
+<% if @data.has_key?('up_cmd') -%>
+	<% @data['up_cmd'].each do |comment, cmd| %>
 # <%= comment %>
-<%= route %>
+up <%= cmd %>
 	<% end %>
 <% end %>
