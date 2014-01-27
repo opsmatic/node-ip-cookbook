@@ -17,3 +17,10 @@ iface <%= iface -%> inet static
 <% else -%>
 iface eth0 inet dhcp
 <% end -%>
+
+<% if @data.has_key?('routes') -%>
+	<% @data['routes'].each do |comment, route| %>
+# <%= comment %>
+<%= route %>
+	<% end %>
+<% end %>

@@ -2,8 +2,11 @@
 	"id": "node-ip-berkshelf",
 	"interfaces": {
 		"eth0": {
-			"address": "10.0.2.15"
+			"address": "10.0.2.15",
 			"netmask": "255.255.255.0"
 		}
+	},
+	"routes": {
+		"test_route": "up route add -net 172.24.1.0/24 gw 10.0.1.99"
 	}
 }
