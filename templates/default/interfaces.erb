@@ -17,3 +17,10 @@ iface <%= iface -%> inet static
 <% else -%>
 iface eth0 inet dhcp
 <% end -%>
+
+<% if @data.has_key?('up_cmd') -%>
+	<% @data['up_cmd'].each do |comment, cmd| %>
+# <%= comment %>
+up <%= cmd %>
+	<% end %>
+<% end %>
